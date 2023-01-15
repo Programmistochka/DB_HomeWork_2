@@ -39,8 +39,8 @@ CREATE TABLE IF NOT EXISTS collections (
 	date DATE
 );
 
-CREATE TABLE IF NOT EXISTS collections_tracks (
-	id_ct SERIAL PRIMARY KEY,
-	collection_id INTEGER NOT NULL REFERENCES collections(collection_id),
-	track_id INTEGER NOT NULL REFERENCES tracks(track_id)
+CREATE TABLE IF NOT EXISTS tracks_collections (
+	id_tc SERIAL PRIMARY KEY,
+	track_id INTEGER NOT NULL REFERENCES tracks(track_id),
+	collection_id INTEGER NOT NULL REFERENCES collections(collection_id)
 );
